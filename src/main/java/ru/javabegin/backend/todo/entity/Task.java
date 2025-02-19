@@ -14,11 +14,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-/*
 
-задачи пользователя
-
- */
 
 @Entity
 @Table(name = "task", schema = "todolist", catalog = "postgres")

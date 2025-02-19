@@ -13,7 +13,7 @@ import ru.javabegin.backend.todo.service.StatService;
 
 public class StatController {
 
-    private final StatService statService; // сервис для доступа к данным (напрямую к репозиториям не обращаемся)
+    private final StatService statService;
 
 
     public StatController(StatService statService) {

@@ -11,11 +11,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 import java.util.Objects;
 
-/*
 
-общая статистика по задачам (незвисимо от категорий задач)
-
- */
 
 @Entity
 @Table(name = "stat", schema = "todolist", catalog = "postgres")
@@ -32,15 +28,15 @@ public class Stat {
     private Long id;
 
     @Column(name = "completed_total", updatable = false)
-    private Long completedTotal; // значение задается в триггере в БД
+    private Long completedTotal;
 
     @Column(name = "uncompleted_total", updatable = false)
-    private Long uncompletedTotal; // значение задается в триггере в БД
+    private Long uncompletedTotal;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @MapsId
-    @JoinColumn(name = "user_id", referencedColumnName = "id") // по каким полям связывать (foreign key)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 
 

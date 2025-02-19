@@ -8,7 +8,7 @@ import ru.javabegin.backend.todo.entity.Priority;
 
 import java.util.List;
 
-// принцип ООП: абстракция-реализация - здесь описываем все доступные способы доступа к данным
+
 @Repository
 public interface PriorityRepository extends JpaRepository<Priority, Long> {
 

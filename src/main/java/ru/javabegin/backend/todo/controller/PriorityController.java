@@ -70,7 +70,7 @@ public class PriorityController {
         priorityService.update(priority);
 
 
-        return new ResponseEntity(HttpStatus.OK); // просто отправляем статус 200 (операция прошла успешно)
+        return new ResponseEntity(HttpStatus.OK);
 
     }
 
@@ -81,7 +81,7 @@ public class PriorityController {
 
         try {
             priority = priorityService.findById(id);
-        } catch (NoSuchElementException e) { // если объект не будет найден
+        } catch (NoSuchElementException e) {
             e.printStackTrace();
             return new ResponseEntity("id=" + id + " not found", HttpStatus.NOT_ACCEPTABLE);
         }
@@ -99,7 +99,7 @@ public class PriorityController {
             return new ResponseEntity("id=" + id + " not found", HttpStatus.NOT_ACCEPTABLE);
         }
 
-        return new ResponseEntity(HttpStatus.OK); // просто отправляем статус 200 (операция прошла успешно)
+        return new ResponseEntity(HttpStatus.OK);
     }
 
 

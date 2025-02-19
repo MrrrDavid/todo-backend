@@ -20,11 +20,11 @@ import java.util.NoSuchElementException;
 
 
 @RestController
-@RequestMapping("/task") // базовый URI
+@RequestMapping("/task")
 public class TaskController {
 
-    public static final String ID_COLUMN = "id"; // имя столбца id
-    private final TaskService taskService; // сервис для доступа к данным (напрямую к репозиториям не обращаемся)
+    public static final String ID_COLUMN = "id";
+    private final TaskService taskService;
 
 
     public TaskController(TaskService taskService) {
@@ -35,7 +35,7 @@ public class TaskController {
 
     @PostMapping("/all")
     public ResponseEntity<List<Task>> findAll(@RequestBody String email) {
-        return ResponseEntity.ok(taskService.findAll(email)); // поиск всех задач конкретного пользователя
+        return ResponseEntity.ok(taskService.findAll(email));
     }
 
 
@@ -89,7 +89,7 @@ public class TaskController {
             e.printStackTrace();
             return new ResponseEntity("id=" + id + " not found", HttpStatus.NOT_ACCEPTABLE);
         }
-        return new ResponseEntity(HttpStatus.OK); // просто отправляем статус 200 (операция прошла успешно)
+        return new ResponseEntity(HttpStatus.OK);
     }
 
 
@@ -125,7 +125,7 @@ public class TaskController {
         Integer pageNumber = taskSearchValues.getPageNumber() != null ? taskSearchValues.getPageNumber() : null;
         Integer pageSize = taskSearchValues.getPageSize() != null ? taskSearchValues.getPageSize() : null;
 
-        String email = taskSearchValues.getEmail() != null ? taskSearchValues.getEmail() : null; // для показа задач только этого пользователя
+        String email = taskSearchValues.getEmail() != null ? taskSearchValues.getEmail() : null;
 
         if (email == null || email.trim().length() == 0) {
             return new ResponseEntity("missed param: email", HttpStatus.NOT_ACCEPTABLE);

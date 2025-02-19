@@ -11,11 +11,7 @@ import javax.persistence.*;
 import java.util.Objects;
 import java.util.Set;
 
-/*
 
-Все доступные роли, которые будут привязаны к пользователю
-
-*/
 
 
 @Entity

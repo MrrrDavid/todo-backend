@@ -13,13 +13,6 @@ import java.io.Serializable;
 import java.util.Objects;
 
 
-/*
-
-справочноное значение - категория пользователя
-может использовать для своих задач
-содержит статистику по каждой категории
-
- */
 
 @Entity
 @Table(name = "category", schema = "todolist", catalog = "postgres")

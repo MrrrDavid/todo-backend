@@ -11,12 +11,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
-/*
 
-справочноное значение - приоритет пользователя
-может использовать для своих задач
-
- */
 
 
 @Entity

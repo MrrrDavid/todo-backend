@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
-@RequestMapping("/category") 
+@RequestMapping("/category")
 public class CategoryController {
 
 
@@ -32,7 +32,7 @@ public class CategoryController {
     public ResponseEntity<Category> add(@RequestBody Category category) {
 
 
-        if (category.getId() != null && category.getId() != 0) { 
+        if (category.getId() != null && category.getId() != 0) {
             return new ResponseEntity("redundant param: id MUST be null", HttpStatus.NOT_ACCEPTABLE);
         }
 
@@ -40,7 +40,7 @@ public class CategoryController {
             return new ResponseEntity("missed param: title MUST be not null", HttpStatus.NOT_ACCEPTABLE);
         }
 
-        return ResponseEntity.ok(categoryService.add(category)); 
+        return ResponseEntity.ok(categoryService.add(category));
     }
 
 
@@ -58,7 +58,7 @@ public class CategoryController {
 
         categoryService.update(category);
 
-        return new ResponseEntity(HttpStatus.OK); 
+        return new ResponseEntity(HttpStatus.OK);
     }
 
 
@@ -75,7 +75,7 @@ public class CategoryController {
             return new ResponseEntity("id=" + id + " not found", HttpStatus.NOT_ACCEPTABLE);
         }
 
-        return new ResponseEntity(HttpStatus.OK); 
+        return new ResponseEntity(HttpStatus.OK);
     }
 
 
