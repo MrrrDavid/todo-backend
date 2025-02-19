@@ -25,7 +25,7 @@ import java.util.Objects;
 @Getter
 @Cacheable
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class Stat { // в этой таблице всего 1 запись, которая обновляется (но никогда не удаляется)
+public class Stat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
