@@ -12,7 +12,7 @@ import org.springframework.util.StopWatch;
 @Component
 @Log
 
-// можно динамически изменять поведение кода с помощью аспектов
+
 public class LoggingAspect {
 
     
